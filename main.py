@@ -1,5 +1,6 @@
 import discord
 import os
+from keep_alive import keep_alive
 
 client = discord.Client()
 
@@ -17,5 +18,7 @@ async def on_message(message):
     if message.content.startswith('WITAM'):
       await message.channel.send('WITAM!')
 
-##bot run
+#web server
+keep_alive()
+#bot run
 client.run(os.getenv('TOKEN'))
