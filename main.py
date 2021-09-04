@@ -69,7 +69,7 @@ async def on_message(message):
     if message.content.startswith('WITAM'):
         await message.channel.send(random.choice(witam_list))
     
-    if message.content.startswith('WITAM'):
+    if message.content.startswith('KRYCHA'):
         await message.channel.send(random.choice(krycha_list))
 
 #web server
