@@ -4,6 +4,10 @@ import random
 from keep_alive import keep_alive
 
 client = discord.Client()
+
+help_list = ["Lista komend bota NABOKI:",
+            "WITAM - przywitanie się z NABOKI, który odpowiada pozdowieniem z listy słów"]
+
 witam_list = ["WITAM!",
               "Witam!",
               "witam!",
@@ -28,11 +32,14 @@ witam_list = ["WITAM!",
 async def on_ready():
     print("Logged in as {0.user}".format(client))
 
-#bot messages
+#bot commands
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
+    
+    if message.content.startswith('HELP'):
+        await message.channel.send(help_list)
 
     if message.content.startswith('WITAM'):
         await message.channel.send(random.choice(witam_list))
