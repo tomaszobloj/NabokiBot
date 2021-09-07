@@ -5,8 +5,10 @@ from keep_alive import keep_alive
 
 client = discord.Client()
 
-help_list = ["Lista komend bota NABOKI:",
-            "WITAM - przywitanie się z NABOKI, który odpowiada pozdowieniem z listy słów"]
+help_list = """:pig: Lista komend bota NABOKI: 
+:arrow_forward: HELP - komenda pomocy
+:arrow_forward: WITAM - przywitanie się z NABOKI, który odpowiada pozdowieniem z listy słów
+:arrow_forward: KRYCHA - komenda wyłączona"""
 
 witam_list = ["WITAM!",
               "Witam!",
