@@ -9,7 +9,7 @@ witam_list = [
 ]
 
 
-class Comm(commands.Cog):
+class Komendy(commands.Cog):
     def __init__(self, client):
         self.client = client
 
@@ -39,10 +39,10 @@ class Comm(commands.Cog):
             f'Zapytanie: {question}\nOdpowiedź: {random.choice(responses)}')
 
     #clear command very dangerous
-    #@commands.command()
-    #async def clear(ctx, amount=5):
-    #    await ctx.channel.purge(limit=amount)
+    @commands.command()
+    async def clear(self, ctx, amount=2):
+        await ctx.channel.purge(limit=amount)
 
 
 def setup(client):
-    client.add_cog(Comm(client))
+    client.add_cog(Komendy(client))
