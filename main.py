@@ -32,13 +32,32 @@ async def on_member_remove(member):
 
 
 #bot commands
-@client.command()
-async def WITAM(ctx):
+@client.command(aliases=['ping', 'Ping', 'PING'])
+async def ping(ctx):
+    await ctx.send(f'Pong! (round{client.latency * 1000}) ms')
+
+
+@client.command(aliases=['witam', 'Witam', 'WITAM'])
+async def witam(ctx):
     await ctx.send(random.choice(witam_list))
 
-@client.command()
-async def PING(ctx):
-    await ctx.send(f'PONG! (round{client.latency * 1000}) ms')
+
+@client.command(aliases=['8ball', '8Ball', '8BALL'])
+async def _8ball(ctx, *, question):
+    responses = [
+        'To pewne.', 'Zdecydowanie tak.', 'Bez wątpienia.',
+        'Tak - zdecydowanie.', 'Możesz na tym polegać.',
+        'Tak, jak ja to widzę.', 'Najprawdopodobniej.', 'Perspektywa dobra.',
+        'Tak.', 'Znaki wskazujące na tak.', 'No jasne że tak.', 'Jeszcze jak.',
+        'Odpowiedz niejasno, spróbuj ponownie.', 'Zapytaj ponownie później.',
+        'Zapytaj Arka, on Ci podpowie.', 'Zaptyaj Krychy.',
+        'Lepiej ci teraz nie mówić.', 'Nie mogę teraz przewidzieć.',
+        'Skoncentruj się i zapytaj ponownie.', 'Nie licz na to.',
+        'Moja odpowiedź brzmi: nie.', 'Według moich źródeł, nie.',
+        'Perspektywa niezbyt dobra.', 'Bardzo wątpliwe.'
+    ]
+    await ctx.send(
+        f'Zapytanie: {question}\nOdpowiedź: {random.choice(responses)}')
 
 
 #web server
