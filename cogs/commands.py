@@ -8,6 +8,19 @@ witam_list = [
     "Elo", "elo", "UWAGA KRYCHA MROZI", "Wyobraź sobie że żyjesz w XXI wieku"
 ]
 
+krycha_list = [
+    "KRYCHA", "Tosia do nogi", "Krycha chuj",
+    "Bardzo tania postytutka w podeszłym wieku", "Chluśniem bo uśniem",
+    "Ma być studniówka", "To kiedy zdalne?", "Mam alarm",
+    "Kupiłem Julce misia", "Jebać Kubusia", "Jebać Szymona", "KURWA",
+    "KURWA KURWA KURWA", "KURWA to twoja stara", "Ide do sklepu po cole",
+    "Poproszę kebaba bez warzyw", "Poproszę kebaba tylko z mięsem",
+    "To co 10 złotych na paliwo", "Oddawaj Termite", "???", "Matme robie",
+    "Ucze się", "Kawa za 2 złote u pana Adriana", "XD", "Grasz w fortnite",
+    "japierdole", "ja odpadam dzis na granie", "Mam mokre włosy", "XDDDDDDDD",
+    "gramy w reinbowa?"
+]
+
 
 class Komendy(commands.Cog):
     def __init__(self, client):
@@ -17,6 +30,11 @@ class Komendy(commands.Cog):
     @commands.command(aliases=['Witam', 'WITAM'])
     async def witam(self, ctx):
         await ctx.send(random.choice(witam_list))
+
+    #krycha command
+    @commands.command(aliases=['Krycha', 'KRYCHA'])
+    async def krycha(self, ctx):
+        await ctx.send(random.choice(krycha_list))
 
     #8ball command
     @commands.command(aliases=['8ball', '8Ball', '8BALL'])
