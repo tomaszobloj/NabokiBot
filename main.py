@@ -32,16 +32,17 @@ async def on_member_remove(member):
 
 
 #bot commands
+#bot latency check
 @client.command(aliases=['ping', 'Ping', 'PING'])
 async def ping(ctx):
     await ctx.send(f'Pong! (round{client.latency * 1000}) ms')
 
-
+#witam command
 @client.command(aliases=['witam', 'Witam', 'WITAM'])
 async def witam(ctx):
     await ctx.send(random.choice(witam_list))
 
-
+#8ball command
 @client.command(aliases=['8ball', '8Ball', '8BALL'])
 async def _8ball(ctx, *, question):
     responses = [
@@ -59,6 +60,10 @@ async def _8ball(ctx, *, question):
     await ctx.send(
         f'Zapytanie: {question}\nOdpowiedź: {random.choice(responses)}')
 
+#clear command very dangerous
+@client.command()
+async def clear(ctx, amount = 5):
+  await ctx.channel.purge(limit = amount)
 
 #web server
 keep_alive()
