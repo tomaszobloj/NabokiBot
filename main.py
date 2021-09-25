@@ -7,7 +7,10 @@ client = commands.Bot(command_prefix="~")
 
 status = discord.Status.online
 #activity = discord.Game('Hrum')
-activity = cycle(['~help', 'prefix ~komenda', 'HRUM', 'Hrum', 'hrum', 'Pozdrawiam mame Krychy', 'Hrum, gdzie moja marchewka'])
+activity = cycle([
+    '~help', 'prefix ~komenda', 'HRUM', 'Hrum', 'hrum',
+    'Pozdrawiam mame Krychy', 'Hrum, gdzie moja marchewka'
+])
 
 
 #events
@@ -15,7 +18,14 @@ activity = cycle(['~help', 'prefix ~komenda', 'HRUM', 'Hrum', 'hrum', 'Pozdrawia
 async def on_ready():
     #await client.change_presence(status, activity)
     change_status.start()
-    print("Logged in as{0.user}".format(client))
+    print("Logged in as {0.user}".format(client))
+
+
+#error handler for none existing commands
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.send("Nie ma takiej komendy.")
 
 
 #tasks
