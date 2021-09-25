@@ -1,18 +1,28 @@
-import discord
-import os
+import discord, os
 from keep_alive import keep_alive
-from discord.ext import commands
+from discord.ext import commands, tasks
+from itertools import cycle
 
 client = commands.Bot(command_prefix="~")
 
-status=discord.Status.online
-activity=discord.Game('Hrum')
+status = discord.Status.online
+#activity = discord.Game('Hrum')
+activity = cycle(['~help', 'prefix ~komenda', 'HRUM', 'Hrum', 'hrum', 'Pozdrawiam mame Krychy', 'Hrum, gdzie moja marchewka'])
+
 
 #events
 @client.event
 async def on_ready():
-  await client.change_presence(status, activity)
-  print("Logged in as{0.user}".format(client))
+    #await client.change_presence(status, activity)
+    change_status.start()
+    print("Logged in as{0.user}".format(client))
+
+
+#tasks
+@tasks.loop(seconds=30)
+async def change_status():
+    await client.change_presence(activity=discord.Game(next(activity)))
+
 
 #bot commands
 #loading cogs
