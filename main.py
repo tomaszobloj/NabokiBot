@@ -6,8 +6,8 @@ from itertools import cycle
 client = commands.Bot(command_prefix="~")
 
 status = discord.Status.online
-activity = discord.Game('Hrum')
-activity = cycle(['HRUM', 'Hrum', 'hrum'])
+#activity = discord.Game('Hrum')
+activity = cycle(['~help', 'prefix ~komenda', 'HRUM', 'Hrum', 'hrum', 'Pozdrawiam mame Krychy', 'Hrum, gdzie moja marchewka'])
 
 
 #events
