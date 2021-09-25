@@ -5,6 +5,11 @@ from discord.ext import commands
 
 client = commands.Bot(command_prefix="~")
 
+#events
+@client.event
+async def on_ready():
+  await client.change_presence(status=discord.Status.online, activity=discord.Game('Hrum'))
+  print("Logged in")
 
 #bot commands
 #loading cogs
