@@ -63,15 +63,15 @@ class Komendy(commands.Cog):
         await ctx.send("Zapytaj o coś. ~8ball [pytanie].")
 
     #clear command very dangerous
-    @commands.command()
-    async def clear(self, ctx, amount : int):
-        await ctx.channel.purge(limit=amount)
+    #@commands.command()
+    #async def clear(self, ctx, amount : int):
+    #    await ctx.channel.purge(limit=amount)
 
     #clear error handler
-    @clear.error
-    async def clear_error(self, ctx, error):
-      if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send("Podaj wartość. ~clear [wartość].")
+    #@clear.error
+    #async def clear_error(self, ctx, error):
+    #  if isinstance(error, commands.MissingRequiredArgument):
+    #    await ctx.send("Podaj wartość. ~clear [wartość].")
 
 
 def setup(client):
