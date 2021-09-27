@@ -1,5 +1,11 @@
 # NabokiBot
-Naboki Bot is my first discord bot
-It is a way to gain experience 
+The community bot for the our Discord community  
 
-Pozdrawiam mame Krychy
+:pig:Naboki to taki mały bot z kilkoma komendami:
+prefix      -> ~
+pomoc       -> ~help
+ping        -> ~ping
+przywitanie -> ~witam
+słowa krychy-> ~krycha
+8ball       -> ~8ball (zadaj pytanie)
+
