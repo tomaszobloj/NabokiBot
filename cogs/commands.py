@@ -18,8 +18,20 @@ krycha_list = [
     "To co 10 złotych na paliwo", "Oddawaj Termite", "???", "Matme robie",
     "Ucze się", "Kawa za 2 złote u pana Adriana", "XD", "Grasz w fortnite",
     "japierdole", "ja odpadam dzis na granie", "Mam mokre włosy", "XDDDDDDDD",
-    "gramy w reinbowa?"
+    "gramy w reinbowa?", "Nie wkurwiaj mnie", "Tomek nie wkurwiaj mnie",
+    "Masz to usunąć", "KURWA", "Kurwa", "kurwa", "Skurwysynu", "Widziałeś grupe"
 ]
+
+tomasz_list = [
+    "WITAM", "Japierdole jesteś frajer", "no xd", "Jebać Kryche",
+    "Gdzie jest krizdow"
+]
+
+arek_list = ["Ojacie", "Kij Ci w oko", "Wiadro", "Co wiadro 1:0 grasz dalej?"]
+
+oskar_list = ["Topur KURWA topory", "Pierdol mnie", ""]
+
+konik_list = ["WITAM", "Ide sie wysrać zw"]
 
 
 class Komendy(commands.Cog):
@@ -36,6 +48,26 @@ class Komendy(commands.Cog):
     async def krycha(self, ctx):
         await ctx.send(random.choice(krycha_list))
 
+    #tomasz command
+    @commands.command(aliases=['Tomasz', 'TOMASZ'])
+    async def tomasz(self, ctx):
+        await ctx.send(random.choice(tomasz_list))
+
+    #arek command
+    @commands.command(aliases=['Arek', 'AREK'])
+    async def arek(self, ctx):
+        await ctx.send(random.choice(arek_list))
+
+    #oskar command
+    @commands.command(aliases=['Oskar', 'OSKAR'])
+    async def oskar(self, ctx):
+        await ctx.send(random.choice(oskar_list))
+
+    #konik command
+    @commands.command(aliases=['Konik', 'KONIK'])
+    async def konik(self, ctx):
+        await ctx.send(random.choice(konik_list))
+
     #8ball command
     @commands.command(aliases=['8ball', '8Ball', '8BALL'])
     async def _8ball(self, ctx, *, question):
@@ -51,7 +83,7 @@ class Komendy(commands.Cog):
             'Nie mogę teraz przewidzieć.',
             'Skoncentruj się i zapytaj ponownie.', 'Nie licz na to.',
             'Moja odpowiedź brzmi: nie.', 'Według moich źródeł, nie.',
-            'Perspektywa niezbyt dobra.', 'Bardzo wątpliwe.'
+            'Perspektywa niezbyt dobra.', 'Bardzo wątpliwe.', 'Nope.', 'NOPE.', "Wypierdalaj z takim pytaniem"
         ]
         await ctx.send(
             f'Zapytanie: {question}\nOdpowiedź: {random.choice(responses)}')
@@ -59,8 +91,8 @@ class Komendy(commands.Cog):
     #8ball error handler
     @_8ball.error
     async def _8ball_error(self, ctx, error):
-      if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send("Zapytaj o coś. ~8ball [pytanie].")
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send("Zapytaj o coś. ~8ball [pytanie].")
 
     #clear command very dangerous
     #@commands.command()
