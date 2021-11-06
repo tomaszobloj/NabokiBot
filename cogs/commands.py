@@ -24,14 +24,25 @@ krycha_list = [
 
 tomasz_list = [
     "WITAM", "Japierdole jesteś frajer", "no xd", "Jebać Kryche",
-    "Gdzie jest krizdow"
+    "Gdzie jest krizdow", "AHA", "aha", "Aha", "Gramy w Deep Rock'a?", "ROCK AND STONE!", 
+    "Rock and Stone!", "Gdzie jest krizdow?"
 ]
 
-arek_list = ["Ojacie", "Kij Ci w oko", "Wiadro", "Co wiadro 1:0 grasz dalej?"]
+arek_list = [
+    "Ojacie", "Kij Ci w oko", "Wiadro", "Co wiadro 1:0 grasz dalej?", "?QUIERES?", 
+    "A wiedziałeś, że ...", "O kur...", "Kij", "kij","aha", "AHA", "WAT", "ROCK AND STONE!", 
+    "Rock and Stone!"
+]
 
-oskar_list = ["Topur KURWA topory", "Pierdol mnie", ""]
+oskar_list = [
+  "Topur KURWA topory", "Pierdol mnie", "Dziękuje", "ROCK AND STONE!", "Rock and Stone!",
+  "Ale ty mi sie kurwa podobasz", "Gdzie jest krizdow?"
+]
 
-konik_list = ["WITAM", "Ide sie wysrać zw"]
+konik_list = [
+  "WITAM", "Ide sie wysrać zw", "Arek chce banana", "Dziękuje", '~~mlaskanie~~', '~~bek~~', 
+  "ROCK AND STONE!", "Rock and Stone!"
+]
 
 
 class Komendy(commands.Cog):
@@ -83,7 +94,10 @@ class Komendy(commands.Cog):
             'Nie mogę teraz przewidzieć.',
             'Skoncentruj się i zapytaj ponownie.', 'Nie licz na to.',
             'Moja odpowiedź brzmi: nie.', 'Według moich źródeł, nie.',
-            'Perspektywa niezbyt dobra.', 'Bardzo wątpliwe.', 'Nope.', 'NOPE.', "Wypierdalaj z takim pytaniem"
+            'Perspektywa niezbyt dobra.', 'Bardzo wątpliwe.', 'Nope.', 
+            'NOPE.', "Wypierdalaj z takim pytaniem", "Pojebało Cię?", 
+            "Napewno nie", "Zdecydowane nie", "NIE", "nein", "NEIN", 
+            "ani náhodou", "Ei", "नहीं", "Pas", "Pass"
         ]
         await ctx.send(
             f'Zapytanie: {question}\nOdpowiedź: {random.choice(responses)}')
