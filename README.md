@@ -21,8 +21,24 @@ The community bot for the our Discord community
   <td>~witam</td>
 <tr>
 <tr>
+  <td>słowa Arka</td>
+  <td>~arek</td>
+<tr>
+<tr>
+  <td>słowa Konika</td>
+  <td>~konik</td>
+<tr>
+<tr>
   <td>słowa krychy</td>
   <td>~krycha</td>
+<tr>
+<tr>
+  <td>słowa Oskara</td>
+  <td>~oskar</td>
+<tr>
+<tr>
+  <td>słowa Tomasza</td>
+  <td>~tomasz</td>
 <tr>
 <tr>
   <td>8ball</td>
